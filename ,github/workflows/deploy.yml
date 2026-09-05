@@ -1,0 +1,19 @@
+name: EC2 Deployment Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Deploy Code
+        run: |
+          echo "Deploying application to EC2..."
+          cp -r * /var/www/html/ 2>/dev/null || true
