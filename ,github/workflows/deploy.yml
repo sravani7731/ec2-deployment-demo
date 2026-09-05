@@ -18,3 +18,5 @@ jobs:
           echo "Deploying application to EC2..."
           sudo cp -r * /var/www/html/
           sudo chmod -R 755 /var/www/html/
+
+          
