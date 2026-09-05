@@ -11,9 +11,10 @@ jobs:
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Deploy Code
         run: |
           echo "Deploying application to EC2..."
-          cp -r * /var/www/html/ 2>/dev/null || true
+          sudo cp -r * /var/www/html/
+          sudo chmod -R 755 /var/www/html/
